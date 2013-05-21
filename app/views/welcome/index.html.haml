@@ -1,0 +1,59 @@
+.container
+  .masthead
+    %h3.muted 
+      %i.icon-shield
+      %span BradGuard
+    -#.navbar
+      -#.navbar-inner
+        -#.container
+          -#%ul.nav
+            -#%li.active
+              -#%a{:href => "#"} Home
+            -#%li
+              -#%a{:href => "#"} Projects
+            -#%li
+              -#%a{:href => "#"} Services
+            -#%li
+              -#%a{:href => "#"} Downloads
+            -#%li
+              -#%a{:href => "#"} About
+            -#%li
+              -#%a{:href => "#"} Contact
+    / /.navbar
+  / Jumbotron
+  .jumbotron
+    %h1 Get email. Always.
+    %p.lead Receive your email on your mobile with BradGuard (formerly known as EmailGoGo).
+    =link_to "Sign up now for our private beta","#myModal", class: "btn btn-success btn-large", data: {toggle: "modal"}
+
+  / Example row of columns
+  %hr/
+  .footer
+    %p © BradGuard 2013
+
+
+#myModal.modal.hide.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h3#myModalLabel Signup now!
+  .modal-body
+    %p Leave your name and email below and we'll contact you when we're ready!
+    = form_for @user, html: {class: "form-horizontal"}, url: users_path, method: :create do |f|
+      %div
+        .control-group
+          %label.control-label Name
+          .controls
+            = f.text_field :name, placeholder: "Name"
+        .control-group
+          %label.control-label Email
+          .controls
+            = f.text_field :email, placeholder: "Email"
+  .modal-footer
+    %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+    %button.btn.btn-success Save changes
+
+:javascript
+  $(".modal-footer .btn-success").click(function(){
+    $("#new_user").submit();
+  });
+

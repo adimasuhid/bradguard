@@ -3,7 +3,7 @@ class IncomingMailsController < ApplicationController
 
     if params[:envelope][:from].present?
       @message = IncomingMail.create!(sender: params[:envelope][:from], subject: params[:headers][:Subject], message: params[:plain])
-      @sms_message = "From:#{@message.sender} Subject:#{@message.subject}"
+      @sms_message = "From: #{@message.sender} Subject: #{@message.subject}"
       puts "Yey in here"
 
       IncomingMail.send_sms("09172416140",@sms_message) #Ace
