@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130522144308) do
+ActiveRecord::Schema.define(:version => 20130522151722) do
 
   create_table "incoming_mails", :force => true do |t|
     t.string   "sender"
@@ -20,6 +20,21 @@ ActiveRecord::Schema.define(:version => 20130522144308) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.string   "short_message"
+  end
+
+  create_table "recipient_lists", :force => true do |t|
+    t.string   "name"
+    t.string   "mail_sender"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "recipients", :force => true do |t|
+    t.string   "number"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.integer  "recipient_list_id"
   end
 
   create_table "users", :force => true do |t|
