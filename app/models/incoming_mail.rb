@@ -1,5 +1,5 @@
 class IncomingMail < ActiveRecord::Base
-  attr_accessible :message, :sender, :subject, :short_message
+  attr_accessible :message, :sender, :subject, :short_message, :forwarder
 
   before_save :shorten
 
