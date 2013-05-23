@@ -2,6 +2,7 @@ class IncomingMailsController < ApplicationController
   def create
 
     if params[:envelope][:from].present?
+      raise params.to_yaml
       @mail = IncomingMail.create!(sender: params[:envelope][:from], forwarder: params[:envelope][:to],subject: params[:headers][:Subject], message: params[:plain])
       puts "Yey in here"
 
