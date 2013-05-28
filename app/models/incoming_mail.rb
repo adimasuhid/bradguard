@@ -1,5 +1,7 @@
 class IncomingMail < ActiveRecord::Base
-  attr_accessible :message, :sender, :subject, :short_message, :forwarder
+  attr_accessible :message, :sender, :subject, :short_message, :forwarder, :user
+
+  belongs_to :user
 
   before_save :shorten
 
@@ -12,6 +14,6 @@ class IncomingMail < ActiveRecord::Base
   end
 
   def shorten
-    self.short_message = "S: #{subject} M:#{message}".slice(0,150)
+    self.short_message = "S: #{subject}\n M:#{message}".slice(0,150)
   end
 end

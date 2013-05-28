@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523030723) do
+ActiveRecord::Schema.define(:version => 20130528024643) do
 
   create_table "incoming_mails", :force => true do |t|
     t.string   "sender"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130523030723) do
     t.datetime "updated_at",    :null => false
     t.string   "short_message"
     t.string   "forwarder"
+    t.integer  "user_id"
   end
 
   create_table "recipient_lists", :force => true do |t|
