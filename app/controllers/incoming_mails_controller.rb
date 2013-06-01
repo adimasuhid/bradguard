@@ -23,7 +23,7 @@ class IncomingMailsController < ApplicationController
   #end
 
   def handle_inbound(event_payload)
-    if event_payload[:from_email].present?
+    if event_payload["from_email"].present?
       @mail = IncomingMail.create!(sender: event_payload[:from_email], forwarder: event_payload[:sender], subject: event_payload[:subject], message: event_payload[:text])
       puts "Yey in here"
       
