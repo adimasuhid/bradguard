@@ -28,7 +28,7 @@ class IncomingMailsController < ApplicationController
         sender: event_payload["msg"]["from_email"],
         forwarder: event_payload["msg"]["sender"],
         subject: event_payload["msg"]["subject"],
-        message: event_payload[:msg][:text]
+        message: event_payload["msg"]["text"]
       }
 
       @mail = IncomingMail.create!(@attrs)
