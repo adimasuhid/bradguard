@@ -63,6 +63,8 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mandrill-rails (0.0.4)
+      activesupport (>= 3.0.3)
     mime-types (1.23)
     multi_json (1.7.3)
     pg (0.14.1)
@@ -136,6 +138,7 @@ DEPENDENCIES
   google-webfonts
   haml-rails
   jquery-rails
+  mandrill-rails
   pg
   rails (= 3.2.11)
   rest-client

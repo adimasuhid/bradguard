@@ -1,4 +1,6 @@
 class IncomingMailsController < ApplicationController
+  include Mandrill::Rails::WebHookProcessor
+
   def index
 
   end
