@@ -6,6 +6,7 @@ class IncomingMailsController < ApplicationController
   end
 
   def create
+    raise params.to_yaml
 
     if params[:envelope][:from].present?
       @mail = IncomingMail.create!(sender: params[:envelope][:from], forwarder: params[:envelope][:to], subject: params[:headers][:Subject], message: params[:plain])
