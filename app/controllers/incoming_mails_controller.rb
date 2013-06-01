@@ -2,7 +2,7 @@ class IncomingMailsController < ApplicationController
   include Mandrill::Rails::WebHookProcessor
 
   def index
-
+    render :text => 'success', :status => 200
   end
 
   def create
@@ -21,6 +21,10 @@ class IncomingMailsController < ApplicationController
       puts "Oh no unknown"
       render :text => 'Unknown user', :status => 404
     end
+  end
+
+  def show
+    render :text => 'success', :status => 200
   end
 
 end
