@@ -23,8 +23,15 @@ class IncomingMailsController < ApplicationController
   #end
 
   def handle_inbound(event_payload)
-    if event_payload[:msg][:from_email].present?
-      @mail = IncomingMail.create!(sender: event_payload[:msg][:from_email], forwarder: event_payload[:msg][:sender], subject: event_payload[:msg][:subject], message: event_payload[:msg][:text])
+    if event_payload["msg"]["from_email"].present?
+      @attrs = {
+        sender: event_payload["msg"]["from_email"],
+        forwarder: event_payload["msg"]["sender"],
+        subject: event_payload["msg"]["subject"],
+        message: event_payload[:msg][:text]
+      }
+
+      @mail = IncomingMail.create!(@attrs)
       puts "Yey in here"
       
       @recipient_list = RecipientList.where(mail_sender: @mail.forwarder).first
