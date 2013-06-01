@@ -1,8 +1,13 @@
 class IncomingMailsController < ApplicationController
   include Mandrill::Rails::WebHookProcessor
 
+  def index
+    head(:ok)
+  end
+
   def handle_inbound(event_payload)
     if event_payload["msg"]["from_email"].present?
+
       @attrs = {
         sender: event_payload["msg"]["from_email"],
         forwarder: event_payload["msg"]["sender"],
