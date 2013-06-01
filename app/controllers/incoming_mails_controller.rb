@@ -10,7 +10,7 @@ class IncomingMailsController < ApplicationController
 
       @attrs = {
         sender: event_payload["msg"]["from_email"],
-        forwarder: event_payload["msg"]["sender"],
+        forwarder: event_payload["msg"]["email"],
         subject: event_payload["msg"]["subject"],
         message: event_payload["msg"]["text"]
       }
