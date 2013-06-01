@@ -1,4 +1,8 @@
 class IncomingMailsController < ApplicationController
+  def index
+
+  end
+
   def create
 
     if params[:envelope][:from].present?
