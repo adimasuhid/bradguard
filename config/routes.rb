@@ -1,4 +1,6 @@
 EmailgogoRails::Application.routes.draw do
+  devise_for :users
+
   resources :incoming_mails
   resources :welcome
   resources :users

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: 
+  recipient_list_id: 
+  user_id: 1
+
+two:
+  email: 
+  recipient_list_id: 
+  user_id: 1

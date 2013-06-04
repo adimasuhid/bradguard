@@ -29,6 +29,7 @@ gem 'google-webfonts'
 gem 'font-awesome-rails'
 gem 'rspec'
 gem 'mandrill-rails'
+gem 'devise'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
