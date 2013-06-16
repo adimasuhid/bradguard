@@ -1,0 +1,22 @@
+.create-recipient
+  %h4 
+    %i.icon-user
+    Add Recipients
+  -#%label Number
+
+  //recipient_list_id taken from adjacent list
+  = simple_form_for @recipient, html: {class: "form-inline"} do |f|
+    = f.input_field :number, class: "input-medium"
+    = f.hidden_field :recipient_list_id
+    = f.submit "Add", class: "btn btn-success"
+
+  %hr
+
+  %h4 
+    %i.icon-folder-open-alt
+    Upload CSV
+  %label CSV
+
+  = simple_form_for @csv_upload, url: csv_uploads_path, method: :post, html: {class: "form-inline"} do |f|
+    = f.filepicker_field :filepicker_url, button_class: "btn", mimetypes: "text/csv"
+    = f.submit "Upload", class: "btn btn-success"

@@ -1,0 +1,6 @@
+.navbar.navbar-inverse
+  .navbar-inner
+    -#= link_to "Title","#", class: "brand"
+    %ul.nav
+      = render 'devise/menu/registration_items'
+      = render 'devise/menu/login_items'

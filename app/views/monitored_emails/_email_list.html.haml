@@ -1,0 +1,15 @@
+%h4 
+  %i.icon-search
+  Monitored Emails
+
+%table.table.table-striped 
+  %thead
+    %tr
+      %th Email
+      %th List
+  %tbody
+    - @monitored_emails.each do |me|
+      -if me.recipient_list.present?
+        %tr
+          %td= me.email
+          %td= me.recipient_list.name

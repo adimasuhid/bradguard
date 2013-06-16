@@ -1,0 +1,20 @@
+%h2 
+  %i.icon-caret-right
+  Monitored Email
+
+%p
+  Choose a list where you want an SMS to be sent
+  when you receive an email from the one you add.
+
+%br
+.container-fluid
+  .row-fluid.monitored_email
+    .span6
+      = render "recipient_lists/existing_lists"
+    .span6
+      = render "monitored_emails/add_email"
+  .row-fluid
+    .span12
+      = render "monitored_emails/email_list"
+
+    %hr

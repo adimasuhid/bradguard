@@ -27,9 +27,14 @@ gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'google-webfonts'
 gem 'font-awesome-rails'
-gem 'rspec'
+gem 'rspec-rails', group: [:development, :test]
 gem 'mandrill-rails'
 gem 'devise'
+gem 'bootstrap-select-rails'
+gem 'simple_form'
+gem 'filepicker-rails'
+gem 'rest-client'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

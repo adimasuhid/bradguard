@@ -1,0 +1,26 @@
+%h1 Dashboard
+%hr
+
+.container-fluid
+  .row-fluid
+    .span2 
+      %h2 Sidebar
+      %h4 Credits Left
+    .span10
+      .row-fluid
+        .span12
+          %hr
+          = render "monitored_email_panel"
+      .row-fluid
+        .span12
+          %hr
+          = render "recipient_panel"
+      .row-fluid
+        .span12
+          %hr
+          %h2 Schedule
+      .row-fluid
+        .span12
+          %hr
+          %h2 Send a Message
+

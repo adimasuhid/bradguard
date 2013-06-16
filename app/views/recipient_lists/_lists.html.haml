@@ -1,0 +1,13 @@
+.create-list
+  = render "recipient_lists/existing_lists"
+
+  %hr
+
+  %h4 
+    %i.icon-edit
+    Create a List
+  = simple_form_for @recipient_list, url: recipient_lists_path, method: :post  do |f|
+    = f.input :name
+    = f.submit "Save", class: "btn btn-success"
+    
+

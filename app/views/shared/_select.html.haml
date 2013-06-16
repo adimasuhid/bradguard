@@ -1,0 +1,6 @@
+%select.selectpicker
+  - options.each do |option|
+    %option{value: option.id}=option.name
+
+:javascript
+  $(".selectpicker").selectpicker()

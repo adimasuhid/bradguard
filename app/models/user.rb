@@ -13,4 +13,6 @@ class User < ActiveRecord::Base
 
   has_many :recipient_lists
   has_many :incoming_mails
+  has_many :csv_uploads
+  has_many :monitored_emails
 end

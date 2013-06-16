@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601155849) do
+ActiveRecord::Schema.define(:version => 20130611022830) do
+
+  create_table "csv_uploads", :force => true do |t|
+    t.string   "filepicker_url"
+    t.integer  "user_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "incoming_mails", :force => true do |t|
     t.string   "sender"

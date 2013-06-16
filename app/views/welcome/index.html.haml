@@ -38,7 +38,7 @@
     %h3#myModalLabel Signup now!
   .modal-body
     %p Leave your name and email below and we'll contact you when we're ready!
-    = form_for @user, html: {class: "form-horizontal"}, url: users_path, method: :create do |f|
+    = form_for @user, html: {class: "form-horizontal"}, url: user_registration_path, method: :create do |f|
       %div
         .control-group
           %label.control-label Name

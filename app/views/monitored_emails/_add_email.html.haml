@@ -1,0 +1,8 @@
+%h4
+  %i.icon-plus
+  Add an Email to Monitor
+
+= simple_form_for @monitored_email, html: {class: "form-inline"} do |f|
+  = f.input_field :email, class: "input-medium"
+  = f.hidden_field :recipient_list_id
+  = f.submit "Save Email", class: "btn btn-success"
